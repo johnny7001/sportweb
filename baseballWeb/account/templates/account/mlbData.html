@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<link href="{% static "css/leftarea.css" %}" rel='stylesheet'> 
+
+<body>
+    <h1>mlbData</h1>
+    <P></P>
+ <div>
+    <a href="{% static "images/mlbBatterRank001.png" %}"><img src="{% static "images/mlbBatterRank001.png" %}"  width="1200px" target="_blank"/></a>
+   <!--  <img src="{{ mlbdf }}" height="525" width="100%" target="_blank"> -->
+    <!-- <iframe id="igraph" scrolling="no" style="border:none;" Seamless="seamless" src="file:///C:/Users/thefo/baseballweb/baseballWeb/temp-plot.html" height="525" width="100%"></iframe> -->
+</div>
+<div class="new-filter">
+    <form name="jump">
+        <select onchange="location=document.jump.menu.options[document.jump.menu.selectedIndex].value;" value="GO" name="menu"><br />
+        <option value="" selected="selected">----打擊數據----</option>
+        <option value= "{% url "mlbData" %}">batterRank</option>
+        <option value= "{% url "mlbBB_HR" %}">BB/HR</option>
+        <option value= "{% url "mlbSO_HR" %}">SO/HR</option>
+        </select>
+    </form>
+</div>
+
+    <div id="footer">
+        <span>
+            作品集
+        </span>
+    </div>
+{% endblock %}
+</body>
+
+
+
+

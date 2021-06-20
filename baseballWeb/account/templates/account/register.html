@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+  <h1>Create an account</h1>
+  <p>Please, sign up using the following form:</p>
+  <form action='.' method='POST'>
+    {{ user_form.as_p }}
+    {% csrf_token %}
+    <p><input type='submit' value='Create my account'></p> <!--輸入類型的value代表欄位中的內容。按鈕類型的value代表按鈕的顯示文字。-->
+  </form>
+{% endblock %}

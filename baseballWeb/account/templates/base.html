@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <tittle>{% block title %}{% endblock %}</tittle>
+    <link href="{% static "css/stytle.css" %}" rel='stylesheet'>    
+</head>
+<body>
+    <div id="header">
+        <a href="{% url "dashboard" %}"><span class="logo">野球細胞</span></a>
+        {% if request.user.is_authenticated %}
+            <ul class="menu">
+                <li><a href="{% url "dashboard" %}">My dashboard</a></li>
+                <li><a href="{% url "mlbData" %}">MBL</a></li>
+                <li><a href="{% url "npbData" %}">NPB</a></li>
+                <li><a href="#">CPBL</a></li>  
+            </ul>
+        {% endif %}
+        <span class='user'>
+        {% if request.user.is_authenticated %} <!--這邊判斷用戶是否有登入, 如果是登入狀態就顯示logout, 反之-->
+            Hello {{ request.user.first_name }},
+            <a href="{% url "logout" %}">Logout</a> <!--增加連結按鈕功能, 會連結到urls裡面設定的連結 -->
+            /<a href="{% url "password_change" %}">Change Password</a>
+            /<a href="{% url "password_reset" %}">Reset Password</a>
+        {% else %}
+            <a href="{% url "login" %}">login</a>
+        {% endif %}  
+        </span>
+    </div>
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+#content{ /*#號後面接id */
+	padding:30px 100px;
+}
+
+#leftarea{
+	width:40%;
+	float:left;
+		
+}
+#rightarea{
+	width:40%;
+	float:left;	
+}
+
+#leftarea img{
+	width:100%;
+}
+
+#rightarea li{
+	list-style-type:None;
+	font-size:25px;
+	border-bottom:1px solid #adadad; /*border-bottom=底線:底線高度, solid=實線 色號*/
+	margin-bottom:2%; /*設定外距, 讓每個li有間隔*/
+}
+#rightarea a{
+	text-decoration:none;
+	color:#000000;
+	margin-left: 2%;
+    font-size:25px;
+}
+
+
+.info{ /*.後面接class*/
+	margin:0px auto 50px;
+	clear:both;
+}
+.info .infoarea{
+	float:left; /*往左浮起*/
+	width:23%; /*佔整個頁面的比例*/
+	padding:15px; /*內距*/
+	
+}
+.info .infoarea img{ /*讓img呈現100*/
+	width:100%;
+	opacity:0.5; /*透明度*/
+	border-radius:5%; /*圖片角度*/
+}
+.info .infoarea img:hover{ /*當滑鼠移動到圖片上面的時候*/
+	opacity:1.0; /*透明度*/
+}
+
+#footer{ /*#號後面接id */
+	clear:both; /*清掉浮板*/
+	width:100%; /*寬*/
+	height:80px; /*高*/
+	background-color:lightpink; /*背景*/
+	color:black; /*字顏色*/
+	font-siza:30px;
+	text-align:center; /*文字對齊-置中*/
+	line-height:80px;
+}
